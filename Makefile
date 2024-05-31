@@ -181,3 +181,9 @@ clean:
 	rm -Rf ${DIR_DOCS_TARGET}/*
 	rm -Rf ${DIR_WEB_TARGET}/*
 	rm -f datagerry.spec
+
+
+# run the application directly with Python
+.PHONY: run
+run: requirements buildvars docs webapp
+	python cmdb/__main__.py -s -d
